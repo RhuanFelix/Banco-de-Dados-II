@@ -1,7 +1,3 @@
-DROP TABLE reservas;
-DROP TABLE hospedes;
-DROP TABLE quartos;
-
 CREATE TABLE hospedes(
 	hospede_id SERIAL PRIMARY KEY,
 	nome VARCHAR(100),
