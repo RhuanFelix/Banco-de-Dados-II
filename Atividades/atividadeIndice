@@ -1,0 +1,18 @@
+CREATE TABLE peDeMeia(
+	m_folha VARCHAR,
+	m_referencia VARCHAR,
+	uf VARCHAR(2),
+	codigo_municipio VARCHAR,
+	nome_municipio VARCHAR,
+	nis VARCHAR,
+	cpf VARCHAR,
+	nome_beneficiario VARCHAR
+);
+
+COPY peDeMeia FROM '/tmp/202501_PeDeMeia.csv'  using delimiters ';';
+
+explain analyse select * from peDeMeia where nis = '16477940303';
+
+create index peDeMeia_idx on peDeMeia(nis);
+
+explain analyse select * from peDeMeia where nis = '16477940303';
